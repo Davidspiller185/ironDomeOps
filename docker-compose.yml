@@ -1,0 +1,26 @@
+services:
+  app:
+    build: .
+    ports:
+     -"3000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: npm run dev
+    depends_on:
+      - mysql
+  mysql:
+      image: mysql:8
+      container_name: iron-dome-db
+      restart: always
+      ports:
+      - "3306:3306"
+      environment:
+        MYSQL_ROOT_PASSWORD: root
+        MYSQL_DATABASE: iron_dome
+      volumes:
+      - mysql-data:/var/lib/mysql
+      - ./db/database.sql:/docker-entrypoint-initdb.d/database.sql
+volumes:
+  mysql-data:
+  
