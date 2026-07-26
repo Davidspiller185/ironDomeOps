@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -13,9 +13,17 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/Davidspiller185/ironDomeOps/issues"
   },
-  "homepage": "https://github.com/Davidspiller185/ironDomeOps#readme"
+  "homepage": "https://github.com/Davidspiller185/ironDomeOps#readme",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "mysql2": "^3.23.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
 }
